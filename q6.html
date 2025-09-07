@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <select id="rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <p id="selectedRating">Selected Rating: </p>
+    <button id="submit">Submit</button>
+    <input type="text" placeholder="Feedback"><br>
+
+    <script>
+        $("#rating").change(function(){
+            let rate = $(this).val();
+            $("#selectedRating").text("Selected Rating: " + rate);
+            if (rate < 3) {
+                $(this).css("border-color", "red");
+            } else {
+                $(this).css("border-color", "");
+            }
+        });
+
+        $("#submit").click(function(){
+            $("input").val("");
+            $("#rating").val("1").css("border-color", "");
+        });
+    </script>
+</body>
+</html>

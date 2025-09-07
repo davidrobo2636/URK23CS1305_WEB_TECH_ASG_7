@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <ul id="products">
+        <li class="product">Laptop - $800 <span class="category">Electronics</span></li>
+        <li class="product">Chair - $50 <span class="category">Furniture</span></li>
+        <li class="product out-of-stock">Old Phone - $100 <span class="category">Electronics</span></li>
+    </ul>
+
+    <script>
+        $("#products .product").first().html("Laptop - $750");
+        $("#products .product").filter(function(){
+            return $(this).find(".category").text() === "Electronics";
+        }).css("background-color", "lightblue");
+
+        $(".out-of-stock").remove();
+    </script>
+</body>
+</html>

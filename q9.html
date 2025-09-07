@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .gallery img { display: none; width: 100px; }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <img src="image1.jpg" class="photo">
+        <img src="image2.jpg" class="photo">
+    </div>
+
+    <script>
+        $(".photo").each(function(index){
+            $(this).delay(1000 * index).fadeIn();
+        });
+
+        $(".photo").click(function(){
+            $(this).animate({ width: "200px", height: "200px" });
+        });
+
+        $(".photo").after("<p>Pets</p>");
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h3 class="question">What is jQuery?</h3>
+    <p class="answer" style="display:none;">A JavaScript library for easier DOM manipulation.</p>
+
+    <script>
+        $(".question").click(function(){
+            $(this).next(".answer").toggle().slideToggle();
+            $(this).css("color", "blue");
+        });
+    </script>
+</body>
+</html>

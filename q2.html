@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <p>This is the first blog post paragraph.</p>
+    <div class="post">Old content</div>
+
+    <script>
+        let text = $("p").text();
+        console.log(text);
+
+        $(".post").html("<h2>New Blog Article</h2><p>New content here.</p>");
+        $(".post").append("<a href='#'>Read More</a>");
+    </script>
+</body>
+</html>

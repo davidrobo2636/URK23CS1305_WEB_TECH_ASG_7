@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <input type="checkbox" class="event" value="Workshop"> Workshop<br>
+    <input type="checkbox" class="event" value="Seminar"> Seminar<br>
+    <input type="checkbox" class="event" value="Meetup"> Meetup<br>
+    <ul id="selectedEvents"></ul>
+    <button id="register">Register</button>
+    <p id="confirmation">Registered successfully!</p>
+
+    <script>
+        $(".event").not(":checked").css("border", "2px solid red");
+
+        $(".event").change(function(){
+            if ($(this).is(":checked")) {
+                $("#selectedEvents").append("<li>" + $(this).val() + "</li>");
+            }
+        });
+
+        $("#register").click(function(){
+            $("#confirmation").fadeTo(2000, 0.5);
+        });
+    </script>
+</body>
+</html>
+<!--  -->

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <img src="image3.jpg" class="photo">
+    <div id="bio">I'm Niggraro.  I do rob.</div>
+    <button id="hideBio">Hide Bio</button>
+    <button id="showBio">Show Bio</button>
+
+    <script>
+        $("#profilePic").attr("src", "https://via.placeholder.com/150");
+        $("#hideBio").click(function(){
+            $("#bio").fadeOut("slow");
+        });
+        $("#showBio").click(function(){
+            $("#bio").fadeIn("fast");
+        });
+    </script>
+</body>
+</html>

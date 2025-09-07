@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <ul id="nav">
+        <li>Home</li>
+        <li>About</li>
+    </ul>
+
+    <script>
+        $("#nav li").first().css("font-weight", "bold");
+        $("#nav li").last().after("<li>Contact Us</li>");
+        $("#nav li").hover(function(){
+            $(this).css("background-color", "lightgray");
+        }, function(){
+            $(this).css("background-color", "");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    Username: <input type="text" id="username"><br>
+    Password: <input type="password" id="password"><br>
+    <button id="login">Login</button>
+    <p id="errorMsg" style="color:red;"></p>
+
+    <script>
+        $("#login").click(function(){
+            alert("Username: " + $("#username").val());
+        });
+
+        $("#password").keyup(function(){
+            if ($(this).val().length < 6) {
+                $("#errorMsg").text("Password too short!");
+            } else {
+                $("#errorMsg").text("");
+            }
+        });
+
+        $("#login").click(function(){
+            if ($("#password").val().length >= 6) {
+                $("form").hide("slow");
+                $("body").append("<h2>Welcome!</h2>");
+            }
+        });
+    </script>
+</body>
+</html>

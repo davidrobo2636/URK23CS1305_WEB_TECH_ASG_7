@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div id="news">Latest headlines here...</div>
+
+    <script>
+        function ticker() {
+            $("#news").slideUp().slideDown();
+        }
+
+        setInterval(function(){
+            $("#news").append("<div>Breaking News at " + new Date().toLocaleTimeString() + "</div>");
+        }, 5000);
+
+        $("#news").hover(function(){
+            $(this).stop();
+        });
+
+        setInterval(ticker, 3000);
+    </script>
+</body>
+</html>

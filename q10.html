@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <table border="1">
+        <tr><td>Roll No: 1</td></tr>
+        <tr><td>Roll No: 2</td></tr>
+        <tr><td>Roll No: 3</td></tr>
+    </table>
+    <button id="addStudent">Add Student</button>
+
+    <script>
+        $("table tr").eq(2).css("background-color", "yellow");
+
+        $("table td").click(function(){
+            alert("Clicked Student Roll: " + $(this).text());
+        });
+
+        $("#addStudent").click(function(){
+            $("table").append("<tr><td>Roll No: 4</td></tr>");
+        });
+    </script>
+</body>
+</html>

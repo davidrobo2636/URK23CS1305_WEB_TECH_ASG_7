@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="product">
+        <span class="price">100</span>
+    </div>
+    <div class="product">
+        <span class="price">200</span>
+    </div>
+    <div class="product">
+        <span class="price">150</span>
+    </div>
+    <button id="calculate">Calculate Total</button>
+    <p id="total">Total: </p>
+
+    <script>
+        $(".product").after('<button class="remove">Remove</button>');
+
+        $("#calculate").click(function(){
+            let total = 0;
+            $(".price").each(function(){
+                total += parseInt($(this).text());
+            });
+            $("#total").text("Total: $" + total);
+        });
+
+        $(".remove").click(function(){
+            $(this).parent().remove();
+        });
+    </script>
+</body>
+</html>
